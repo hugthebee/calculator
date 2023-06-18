@@ -7,38 +7,44 @@ body{
 }
 
 .body{
-    flex:0 1 auto;
     background-color: #a8a3a3;
     width: 440px;
-    height:640px;
-    display:flex;
-    justify-content: center;
+    min-height:640px;
     border-radius: 25px;
     border: solid black;
     padding: 20px 30px 20px 30px;
-}
-
-.screen{
-    flex:auto;
-    width: 500px;
-    height:150px;
-    background-color: #cfc6c6;
-    border: solid black;
-    border-radius: 25px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap:15px;
 }
 
+.screen{
+    flex:2 1 auto;
+    background-color: #cfc6c6;
+    min-width: 400px;
+    min-height:150px;
+    border: solid black;
+    border-radius: 25px;
+    text-align: right;
+    padding-top:40px;
+    padding-right:20px;
+    box-sizing: border-box;
+    font-size: 50px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
 #ac, #ce{
+    flex:auto;
     width: 170px;
     height: 60px;
     border: solid black;
     border-radius: 15px;
     text-align: center;
     box-sizing: border-box;
-    margin-top: 170px;
+    font-size: larger;
 }
 
 #ac{
@@ -52,6 +58,7 @@ body{
 .number{
     width:80px;
     height:80px;
+    flex:auto;
     background-color: #dbd5d5;
-    font-size: large;
+    font-size: larger;
 }
