@@ -1,14 +1,14 @@
-let firstNum, secondNum, op, display, calc;
+let firstNum, secondNum, op, display, calc,dec;
 const screen = document.querySelector(".screen");
 calc=0;
 display = "0";
 firstNum = "";
 secondNum = "";
+dec=0;
 screen.textContent = display;
 
 const ac = document.querySelector("#ac");
 ac.addEventListener("mouseover",()=>{
-    console.log("hi");
     ac.classList.add("select");
 });
 ac.addEventListener("mouseleave",()=>{
@@ -24,7 +24,6 @@ ac.addEventListener("click",()=>
 
 const ce = document.querySelector("#ce");
 ce.addEventListener("mouseover",()=>{
-    console.log("hi");
     ce.classList.add("select");
 });
 
@@ -88,10 +87,13 @@ for(let i=0;i<nums.length;i++){
         {
             display= display+" "+ nums[i].textContent + " ";
             calc++;
+            dec=0;
         }
+        else if(nums[i].textContent==="."){dec++; display+=nums[i].textContent;}
         else display+=nums[i].textContent;
 
         if(calc > 1) {calc = 0; calculate(display);}
+        if(dec>1){dec = 1; display=display.slice(0,-1);}
         if(display[0]==="0" && calc===0) display=display.slice(1); 
         screen.textContent = display;
     });
